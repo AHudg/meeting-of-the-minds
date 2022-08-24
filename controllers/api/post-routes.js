@@ -1,14 +1,14 @@
 const router = require('express').Router();
-const { Account } = require('../../models');
+const { Post } = require('../../models');
 
 // back-end request is sent here from controllers>api>index.js
 
-// get all accounts
+// get all posts
 router.get('/', (req, res) => {
-    Account.findAll({
-        attributes: { exclude: ['password'] }
+    Post.findAll({
+
     })
-    .then(dbAccountData => res.json(dbAccountData))
+    .then(dbPostData => res.json(dbPostData))
     .catch(err => {
         console.log(err);
         res.status(500).json(err);

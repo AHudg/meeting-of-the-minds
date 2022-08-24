@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const exphbs = require('express-handlebars');
 
+// access to controller folder
 const controllers = require('./controllers');
 
 // create the express application
@@ -25,6 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 // serves static files upon initializing
 app.use(express.static(path.join(__dirname, 'public')));
 
+// sends to controller directory
 app.use(controllers);
 
 sequelize.sync({ force: false }).then(() => {

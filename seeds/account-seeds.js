@@ -1,7 +1,6 @@
 const { Account } = require('../models');
-const sequelize = require('../config/connection');
 
-const accountarray = [
+const accountArray = [
     {
         username: 'andrew',
         email: 'andrew@me.com',
@@ -29,6 +28,6 @@ const accountarray = [
     }
 ];
 
-const seedAccounts = () => Account.bulkCreate(accountarray);
+const seedAccounts = () => Account.bulkCreate(accountArray);
 
 module.exports = seedAccounts;
