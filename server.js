@@ -20,7 +20,7 @@ app.use(express.json());
 // URL-encoded data will be parsed w/ qs library allowing creation of nested objects from query strings
 // and does not filter out ? from the query string
 app.use(express.urlencoded({ extended: true }));
-// serves static files upon 
+// serves static files upon initializing
 app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use(require('./controllers/'));
