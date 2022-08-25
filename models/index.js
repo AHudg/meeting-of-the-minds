@@ -4,7 +4,8 @@ const Comment = require('./Comment');
 
 // Account to Post associations
 Account.hasMany(Post, {
-    foreignKey: 'account_id'
+    foreignKey: 'account_id',
+    onDelete: 'CASCADE'
 });
 
 Post.belongsTo(Account, {
@@ -23,7 +24,8 @@ Comment.belongsTo(Account, {
 
 // Post to Comment associations
 Post.hasMany(Comment, {
-    foreignKey: 'post_id'
+    foreignKey: 'post_id',
+    onDelete: 'CASCADE'
 });
 
 Comment.belongsTo(Post, {
