@@ -11,6 +11,7 @@ const commentRoutes = require('./comment-routes');
 router.use('/accounts', accountRoutes);
 // uses /posts when using post-routes.js
 router.use('/posts', postRoutes);
+// uses /comments when using comment-routes.js
 router.use('/comments', commentRoutes);
 
 module.exports = router;

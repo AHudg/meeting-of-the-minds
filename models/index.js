@@ -21,4 +21,13 @@ Comment.belongsTo(Account, {
     foreignKey: 'account_id'
 });
 
+// Post to Comment associations
+Post.hasMany(Comment, {
+    foreignKey: 'post_id'
+});
+
+Comment.belongsTo(Post, {
+    foreignKey: 'post_id'
+});
+
 module.exports = { Account, Post , Comment };
