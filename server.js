@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const exphbs = require('express-handlebars');
+const helpers = require('./utils/helpers');
 
 // access to controller folder
 const controllers = require('./controllers');
@@ -12,10 +13,10 @@ const PORT = process.env.PORT || 3001;
 const sequelize = require('./config/connection');
 // const session = require('express-session');
 
-const hbs = exphbs.create({});
+const hbs = exphbs.create({ helpers });
 
-// app.engine('handlebars', hbs.engine);
-// app.set('view engine', 'handlebars');
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 // app.use function adds a new middleware to the app; these are executed when a request hits the backend
 // express.json() parses incoming JSON requests and puts the parsed data in req.body

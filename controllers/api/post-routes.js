@@ -5,7 +5,19 @@ const { Account, Post, Comment } = require('../../models');
 
 // get all posts at /api/posts
 router.get('/', (req, res) => {
-    Post.findAll({})
+    Post.findAll({
+        attributes: ['id','title','content'],
+        include: [
+            {
+                model: Account,
+                attributes: ['username']
+            },
+            {
+                model: Comment,
+                attributes: ['comment']
+            }
+        ]
+    })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
         console.log(err);
