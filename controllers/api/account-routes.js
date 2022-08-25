@@ -15,4 +15,17 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/:id', (req, res) => {
+    Account.findOne({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbAccountData => res.json(dbAccountData))
+    .catch(err => {
+        console.log(err);
+        res.status(404).json({ message: 'No user found with this id.' });
+    });
+});
+
 module.exports = router;
