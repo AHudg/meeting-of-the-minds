@@ -7,6 +7,7 @@
     --primary-text: rgb(70, 255, 38);
     --primary-font: 'Silkscreen';
     --secondary-text: rgb(34, 156, 13);
+    --tertiary-text: rgb(9, 54, 0);
     --accent-text: rgb(128, 128, 128);
 }
 
@@ -24,10 +25,12 @@ body {
     width: 100vw;
     padding: 0;
     margin: 0;
-    font-family: sans-serif;
+    font-family: serif;
     background-color: var(--background-color);
+    color: var(--accent-text);
 }
 
+/* Navigation Styling */
 a {
     text-decoration: none;
     
@@ -63,7 +66,9 @@ li {
     font-size: 3vw;
     color: var(--secondary-text);
 }
+/* End of Navigation */
 
+/* Landing Page Styling */
 .post-title {
     font-family: var(--primary-font);
     color: var(--primary-text);
@@ -75,6 +80,37 @@ li {
 
 .post-content {
     color: var(--secondary-text);
+}
+/* End of Landing Page */
+
+/* Log In Page Styling */
+form {
+    border-top: double 4px var(--primary-text);
+    border-bottom: double 4px var(--primary-text);
+    background-color: var(---text);
+    padding-bottom: 20px;
+    color: var(--secondary-text);
+}
+
+.form-header {
+    font-family: var(--primary-font);
+    color: var(--primary-text);
+    margin: 30px auto;
+}
+
+label {
+    padding: 20px 0 0 0;
+}
+
+input {
+    background-color: var(--tertiary-text);
+    border: solid 1px var(--secondary-text);
+    color: white;
+}
+
+.toggle-phrase {
+    margin-top: 20px;
+    font-size: 2vw;
 }
 
 /* For iPads and Tablets 481px - 768px */
@@ -90,6 +126,14 @@ li {
 
     .accent-text {
         font-size: 2vw;
+    }
+
+    form {
+        padding-top: 30px;
+    }
+
+    .form-section {
+        padding-bottom: 20px;
     }
 }
 
