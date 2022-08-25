@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: rgb(3, 13, 1);
+    --primary-text: rgb(70, 255, 38);
+    --primary-font: 'Silkscreen';
+    --secondary-text: rgb(34, 156, 13);
+    --accent-text: rgb(128, 128, 128);
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+ol {
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    background-color: var(--background-color);
+}
+
+a {
+    text-decoration: none;
+    
+    color: var(--secondary-text)
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--primary-text);
+}
+
+li {
+    list-style-type: none;
+    margin: 5px 0;
+}
+
+#header {
+    color: var(--primary-text);
+    font-size: 6vw;
+}
+
+.nav-bar {
+    padding: 10px 20px 0;
+    font-family: var(--primary-font);
+}
+
+.nav-border {
+    border-top: dashed 3px var(--primary-text);
+    border-bottom: dashed 3px var(--primary-text);
+}
+
+.accent-text {
+    font-size: 3vw;
+    color: var(--secondary-text);
+}
+
+.post-title {
+    font-family: var(--primary-font);
+    color: var(--primary-text);
+}
+
+.post-meta {
+    color: var(--accent-text);
+}
+
+.post-content {
+    color: var(--secondary-text);
+}
+
+/* For iPads and Tablets 481px - 768px */
+@media screen and (min-width:481px) {
+
+}
+
+/* For Small Screens and Laptops 769px - 1024px */
+@media screen and (min-width:769px) {
+    #header {
+        font-size: 3vw;
+    }
+
+    .accent-text {
+        font-size: 2vw;
+    }
+}
+
+/* For Desktops and Large Screens 1025px - 1200px */
+@media screen and (min-width:1025px) {
+
+}
+
+/* For Extra Large Screens and TVs 1201px and more */
+@media screen and (min-width:1201px) {
+    .accent-text {
+        font-size: 1.8vw;
+    }
+}
