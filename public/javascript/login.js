@@ -9,7 +9,21 @@ async function loginFormHandler(event) {
 
 
     if (email && password) {
-        
+        const response = await fetch('/api/accounts/login', {
+            method: 'post',
+            body: JSON.stringify({
+                email,
+                password
+            }),
+            headers: { 'Content-Type': 'application/json'}
+        });
+
+        //check the response
+        if (response.ok) {
+            document.location.replace('/profile')
+        } else {
+            alert(response.statusText);
+        }
     }
 };
 

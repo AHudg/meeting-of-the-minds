@@ -5,11 +5,13 @@ const router = require('express').Router();
 // access to the api subdirectory
 const apiRoutes = require('./api');
 const landingRoutes = require('./landing-routes');
+const profileRoutes = require('./profile-routes');
 
 // uses localhost:PORT/api in the url
 router.use('/api', apiRoutes);
 // uses localhost:PORT/
 router.use('/', landingRoutes);
+router.use('/', profileRoutes);
 
 router.use((req, res) => {
   res.status(404).end();

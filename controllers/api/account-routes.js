@@ -56,12 +56,58 @@ router.post('/', (req, res) => {
         password: req.body.password
     })
     .then(dbAccountData => {
-        res.json(dbAccountData);
+        req.session.save(() => {
+            req.session.account_id = dbAccountData.id;
+            req.session.username = dbAccountData.username;
+            req.session.loggedIn = true;
+
+            res.json(dbAccountData);
+        });
     })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
     });
+});
+
+// used to log the user into the server session
+router.post('/login', (req, res) => {
+    Account.findOne({
+        where: {
+            email: req.body.email
+        }
+    }).then(dbAccountData => {
+        if (!dbAccountData) {
+            res.status(400).json({ message: 'Username or password are incorrect.' });
+            return;
+        }
+
+        const isPassword = req.body.password;
+
+        if (!isPassword) {
+            res.status(400).json({ message: 'Username or password are incorrect.' });
+            return;
+        }
+
+        req.session.save(() => {
+            req.session.account_id = dbAccountData.id;
+            req.session.username = dbAccountData.username;
+            req.session.loggedIn = true;
+
+            res.json({ user: dbAccountData, message: 'You are logged in!' });
+        });
+    });
+});
+
+// used to log the user out of the server session
+router.post('/logout', (req, res) => {
+    if (req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    } else {
+        res.status(404).end;
+    }
 });
 
 // update an account at /api/accounts/id
