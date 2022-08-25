@@ -1,12 +1,14 @@
 const router = require('express').Router();
-const { Account } = require('../../models');
+const { Account, Post, Comment} = require('../../models');
 
 // back-end request is sent here from controllers>api>index.js
 
 // get all accounts at /api/accounts
 router.get('/', (req, res) => {
     Account.findAll({
-        attributes: { exclude: ['password'] }
+        attributes: {
+             exclude: ['password'] 
+        }
     })
     .then(dbAccountData => res.json(dbAccountData))
     .catch(err => {
@@ -17,10 +19,21 @@ router.get('/', (req, res) => {
 
 // get specific account at /api/accounts/id
 router.get('/:id', (req, res) => {
+    console.log(req.params.id)
     Account.findOne({
         where: {
             id: req.params.id
-        }
+        },
+        include: [
+            {
+                model: Post,
+                attributes: ['title']
+            },
+            {
+                model: Comment,
+                attributes: ['comment']
+            }
+        ]
     })
     .then(dbAccountData => {
         if (!dbAccountData) {
