@@ -83,12 +83,12 @@ li {
 }
 /* End of Landing Page */
 
-/* Log In Page Styling */
+/* Log In/Sign Up Page Styling */
 form {
     border-top: double 4px var(--primary-text);
     border-bottom: double 4px var(--primary-text);
     background-color: var(---text);
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
     color: var(--secondary-text);
 }
 
@@ -99,27 +99,52 @@ form {
 }
 
 label {
-    padding: 20px 0 0 0;
+    padding-top: 20px;
 }
 
 input {
+    background-color: var(--background-text);
+    border: solid 1px var(--secondary-text);
+    color: var(--primary-text);
+    height: 50px;
+}
+
+input:focus {
     background-color: var(--tertiary-text);
     border: solid 1px var(--secondary-text);
-    color: white;
+    color: var(--primary-text);
 }
 
 .toggle-phrase {
     margin-top: 20px;
-    font-size: 2vw;
+    font-size: 4vw;
 }
 
-/* For iPads and Tablets 481px - 768px */
+.login-btn {
+    margin: 20px 0;
+    padding: 5px;
+    background-color: var(--background-text);
+    border-radius: 10px;
+    border: solid 1px var(--secondary-text);
+    color: var(--secondary-text);
+}
+
+.login-btn:hover {
+    background-color: var(--tertiary-text);
+    color: var(--primary-text);
+}
+
+/* End of Log In/Sign Up */
+
+/* For iPads and Tablets 481px - 767px */
 @media screen and (min-width:481px) {
-
+    .toggle-phrase {
+        font-size: 3vw;
+    }
 }
 
-/* For Small Screens and Laptops 769px - 1024px */
-@media screen and (min-width:769px) {
+/* For Small Screens and Laptops 768px - 1024px */
+@media screen and (min-width:768px) {
     #header {
         font-size: 3vw;
     }
@@ -135,16 +160,26 @@ input {
     .form-section {
         padding-bottom: 20px;
     }
+
+    .toggle-phrase {
+        font-size: 2vw;
+    }
 }
 
 /* For Desktops and Large Screens 1025px - 1200px */
 @media screen and (min-width:1025px) {
-
+    .toggle-phrase {
+        font-size: 1.3vw;
+    }
 }
 
 /* For Extra Large Screens and TVs 1201px and more */
 @media screen and (min-width:1201px) {
     .accent-text {
         font-size: 1.8vw;
+    }
+
+    .toggle-phrase {
+        font-size: 1.2vw;
     }
 }
