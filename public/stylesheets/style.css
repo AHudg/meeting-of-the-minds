@@ -3,11 +3,11 @@
 }
 
 :root {
-    --background-color: rgb(3, 13, 1);
+    --background-color: rgb(5, 10, 1);
     --primary-text: rgb(70, 255, 38);
     --primary-font: 'Silkscreen';
     --secondary-text: rgb(34, 156, 13);
-    --tertiary-text: rgb(9, 54, 0);
+    --tertiary-text: rgb(5, 40, 0);
     --accent-text: rgb(128, 128, 128);
 }
 
@@ -88,7 +88,6 @@ form {
     border-top: double 4px var(--primary-text);
     border-bottom: double 4px var(--primary-text);
     background-color: var(---text);
-    /* padding-bottom: 20px; */
     color: var(--secondary-text);
 }
 
