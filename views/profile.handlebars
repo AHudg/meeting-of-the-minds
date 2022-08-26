@@ -10,15 +10,16 @@
       <label class="col-sm-12 col-md-3" for="post-content">Content:</label>
       <input class="col-sm-12 col-md-8" id="post-content" name="post-content" />
     </div>
-    <button class="col-8 login-btn" type="submit" class="btn">Create Post</button>
+    <button class="col-8 login-btn" type="submit">Create Post</button>
   </form>
 </section>
 
 <h3 class="form-header text-right">...Your Post</h3>
 
-<ol class="row">
+<ol class="row justify-content-end">
     {{#each posts}}
         {{> poppost}}
+        <button class="col-3 edit-btn" type="submit">Edit Post</button>
     {{/each}}
 </ol>
 

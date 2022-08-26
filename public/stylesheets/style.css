@@ -69,17 +69,29 @@ li {
 /* End of Navigation */
 
 /* Landing Page Styling */
+.post-body {
+    background-color: rgba(5, 40, 0, 0.5);;
+}
+
 .post-title {
     font-family: var(--primary-font);
     color: var(--primary-text);
-}
-
-.post-meta {
-    color: var(--accent-text);
+    font-size: 5vw;
+    padding: 0;
 }
 
 .post-content {
     color: var(--secondary-text);
+    font-size: 3vw;
+    padding: 15px;
+    overflow-y: scroll;
+    margin-bottom: 0px;
+    font-size: 3.5vw;
+}
+
+.post-meta {
+    color: var(--accent-text);
+    font-size: 2.5vw;
 }
 /* End of Landing Page */
 
@@ -95,6 +107,7 @@ form {
     font-family: var(--primary-font);
     color: var(--primary-text);
     margin: 30px auto;
+    font-size: 6vw;
 }
 
 label {
@@ -150,10 +163,36 @@ input:-webkit-autofill{
 
 /* End of Log In/Sign Up */
 
+/* Profile Styling */
+.edit-btn {
+    margin: 10px 0 30px;
+    padding: 5px;
+    background-color: var(--background-text);
+    border-radius: 10px;
+    border: solid 1px var(--secondary-text);
+    color: var(--secondary-text);
+}
+
 /* For iPads and Tablets 481px - 767px */
 @media screen and (min-width:481px) {
     .toggle-phrase {
         font-size: 3vw;
+    }
+
+    .form-header {
+        font-size: 5vw;
+    }
+
+    .post-title {
+        font-size: 4vw;
+    }
+    
+    .post-content {
+        font-size: 3vw;
+    }
+    
+    .post-meta {
+        font-size: 2vw;
     }
 }
 
@@ -178,11 +217,43 @@ input:-webkit-autofill{
     .toggle-phrase {
         font-size: 2vw;
     }
+
+    .form-header {
+        font-size: 4vw;
+    }
+
+    .post-title {
+        font-size: 2.8vw;
+    }
+    
+    .post-content {
+        font-size: 2vw;
+    }
+    
+    .post-meta {
+        font-size: 1.5vw;
+    }
 }
 
 /* For Desktops and Large Screens 1025px - 1200px */
 @media screen and (min-width:1025px) {
     .toggle-phrase {
+        font-size: 1.3vw;
+    }
+
+    .form-header {
+        font-size: 3vw;
+    }
+
+    .post-title {
+        font-size: 2.5vw;
+    }
+    
+    .post-content {
+        font-size: 1.6vw;
+    }
+    
+    .post-meta {
         font-size: 1.3vw;
     }
 }
@@ -195,5 +266,21 @@ input:-webkit-autofill{
 
     .toggle-phrase {
         font-size: 1.2vw;
+    }
+
+    .form-header {
+        font-size: 2vw;
+    }
+
+    .post-title {
+        font-size: 2vw;
+    }
+    
+    .post-content {
+        font-size: 1.3vw;
+    }
+    
+    .post-meta {
+        font-size: 1vw;
     }
 }
