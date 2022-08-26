@@ -114,13 +114,28 @@ input:focus {
     color: var(--primary-text);
 }
 
+/* Change the white to any color ;) */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px var(--background-color) inset !important;
+}
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px var(--tertiary-text) inset !important;
+}
+
+/*Change text in autofill textbox*/
+input:-webkit-autofill{
+    -webkit-text-fill-color: var(--primary-text) !important;
+}
+
 .toggle-phrase {
     margin-top: 20px;
     font-size: 4vw;
 }
 
 .login-btn {
-    margin: 20px 0;
+    margin: 20px 0 30px;
     padding: 5px;
     background-color: var(--background-text);
     border-radius: 10px;

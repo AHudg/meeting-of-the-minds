@@ -1,9 +1,5 @@
 <ol class="row">
     {{#each posts}}
-    <li class="col-12">
-        <h2 class="post-title">{{title}}</h2>
-        <span class="post-meta"> Created by: {{account.username}} on {{fixDate created_at}}</span>
-        <p class="post-content">{{content}}</p>
-    </li>
+        {{> poppost}}
     {{/each}}
 </ol>

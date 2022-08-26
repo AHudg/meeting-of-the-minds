@@ -9,9 +9,10 @@ const profileRoutes = require('./profile-routes');
 
 // uses localhost:PORT/api in the url
 router.use('/api', apiRoutes);
+// uses localhost:PORT/profile in the url
+router.use('/profile', profileRoutes);
 // uses localhost:PORT/
 router.use('/', landingRoutes);
-router.use('/', profileRoutes);
 
 router.use((req, res) => {
   res.status(404).end();
