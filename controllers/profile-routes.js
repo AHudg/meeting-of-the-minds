@@ -8,6 +8,7 @@ router.get('/', authenticate, (req, res) => {
         where: {
             account_id: req.session.account_id
         },
+        order: [['created_at', 'DESC']],
         attributes: ['id', 'title', 'content', 'created_at'],
         include: [
             {

@@ -13,13 +13,13 @@ async function signupFormHandler(event) {
 
     if (username && email && password) {
         const response = await fetch('/api/accounts', {
-            method: 'post',
+            method: 'POST',
             body: JSON.stringify({
                 username,
                 email,
                 password
             }),
-            headers: { 'Content-Type': 'application/json'}
+            headers: { 'Content-Type': 'application/json' }
         });
 
         //check the response
@@ -27,8 +27,8 @@ async function signupFormHandler(event) {
             document.location.replace('/profile')
         } else {
             alert(response.statusText);
-        }
-    }
+        };
+    };
 };
 
 document.querySelector('.login-btn').addEventListener('click', signupFormHandler)

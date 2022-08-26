@@ -108,7 +108,7 @@ input {
     height: 50px;
 }
 
-input:focus {
+input:hover, input:focus, input:active {
     background-color: var(--tertiary-text);
     border: solid 1px var(--secondary-text);
     color: var(--primary-text);
