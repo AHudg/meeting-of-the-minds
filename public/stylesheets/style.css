@@ -70,7 +70,7 @@ li {
 
 /* Landing Page Styling */
 .post-body {
-    background-color: rgba(5, 40, 0, 0.5);;
+    background-color: rgba(5, 40, 0, 0.5);
 }
 
 .post-title {
@@ -170,6 +170,14 @@ input:-webkit-autofill{
     border-radius: 10px;
     border: solid 1px var(--secondary-text);
     color: var(--secondary-text);
+}
+/* End of Profile Styling */
+
+/* Comments Styling */
+.comment-content {
+    padding: 10px;
+    margin: 0;
+    color: var(--primary-text);
 }
 
 /* For iPads and Tablets 481px - 767px */

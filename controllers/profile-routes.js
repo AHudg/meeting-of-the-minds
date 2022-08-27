@@ -36,10 +36,20 @@ router.get('/edit/:id', authenticate, (req, res) => {
             id: req.params.id
         },
         attributes: ['id','title','content','created_at'],
-        include: {
-            model: Account,
-            attributes: ['username']
-        }
+        include: [
+            {
+                model: Account,
+                attributes: ['username']
+            },
+            {
+                model: Comment,
+                attribute: ['id','content','account_id','post_id','created_at'],
+                include: {
+                    model: Account,
+                    attributes: ['username']
+                }
+            }
+        ]
     })
     .then(dbPostData => {
         if (!dbPostData) {
@@ -48,6 +58,7 @@ router.get('/edit/:id', authenticate, (req, res) => {
         }
 
         const post = dbPostData.get({ plain: true });
+        console.log(post)
 
         res.render('edit-post', { post, loggedIn: true});
     })
