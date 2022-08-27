@@ -1,0 +1,17 @@
+<section>
+    <h2 class="form-header">Editting Post {{post.id}}</h2>
+
+    <form class="row justify-content-center text-center">
+    <div class="col-12 form-section">
+      <label class="col-sm-12 col-md-3" for="post-title">Title:</label>
+      <input class="col-sm-12 col-md-8" type="text" id="post-title" name="post-title" value="{{post.title}}"/>
+    </div>
+    <div class="col-12 form-section">
+      <label class="col-sm-12 col-md-3" for="post-content">Content:</label>
+      <input class="col-sm-12 col-md-8" id="post-content" name="post-content" value="{{post.content}}"/>
+    </div>
+    <button class="col-8 login-btn" type="submit">Edit Post</button>
+  </form>
+</section>
+
+<script src="/javascript/edit-post.js"></script>

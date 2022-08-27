@@ -21,7 +21,6 @@ router.get('/', authenticate, (req, res) => {
         // serializes the data and
         // returns an array of each post object w/ properties of id, title, content, and account: { username: 'user' }
         const posts = dbPostData.map(post => post.get({ plain: true }));
-        console.log(posts)
         // res.render accepts a second argument of an object containing the data you want to display in the template
         res.render('profile', { posts, loggedIn: true });
     })
@@ -48,9 +47,9 @@ router.get('/edit/:id', authenticate, (req, res) => {
             return;
         }
 
-        const posts = dbPostData.get({ plain: true });
+        const post = dbPostData.get({ plain: true });
 
-        res.render('edit-post', { posts, loggedIn: true});
+        res.render('edit-post', { post, loggedIn: true});
     })
     .catch(err => {
         console.log(err);
