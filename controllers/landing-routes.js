@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Account, Post, Comment } = require('../models');
+const authenticate = require('../utils/authenticate');
 
 router.get('/', (req, res) => {
     Post.findAll({
@@ -10,6 +11,14 @@ router.get('/', (req, res) => {
             {
                 model: Account,
                 attributes: ['username']
+            },
+            {
+                model: Comment,
+                attribute: ['id','content','account_id','post_id','created_at'],
+                include: {
+                    model: Account,
+                    attributes: ['username']
+                }
             }
         ]
     })
@@ -31,11 +40,42 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/post/:id', (req, res) => {
-    // used to see post when logged out
-    // activated by clicking "comments"
-    // populates the individual post with the comments
-})
+router.get('/post/:id', authenticate, (req, res) => {
+    Post.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: ['id','title','content','created_at'],
+        include: [
+            {
+                model: Account,
+                attributes: ['username']
+            },
+            {
+                model: Comment,
+                attribute: ['id','content','account_id','post_id','created_at'],
+                include: {
+                    model: Account,
+                    attributes: ['username']
+                }
+            }
+        ]
+    })
+    .then(dbPostData => {
+        if (!dbPostData) {
+            res.status(404).json({ message: 'No user found with this id.' });
+            return;
+        }
+
+        const post = dbPostData.get({ plain: true });
+
+        res.render('view-post', { post, loggedIn: true});
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {

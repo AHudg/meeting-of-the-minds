@@ -69,10 +69,6 @@ li {
 /* End of Navigation */
 
 /* Landing Page Styling */
-.post-body {
-    background-color: rgba(5, 40, 0, 0.5);
-}
-
 .post-title {
     font-family: var(--primary-font);
     color: var(--primary-text);
@@ -177,7 +173,7 @@ input:-webkit-autofill{
 .comment-content {
     padding: 10px;
     margin: 0;
-    color: var(--primary-text);
+    color: var(--secondary-text);
 }
 
 /* For iPads and Tablets 481px - 767px */

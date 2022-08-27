@@ -19,7 +19,6 @@ router.get('/', (req, res) => {
 
 // get specific account at /api/accounts/id
 router.get('/:id', (req, res) => {
-    console.log(req.params.id)
     Account.findOne({
         where: {
             id: req.params.id

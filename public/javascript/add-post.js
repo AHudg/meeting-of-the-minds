@@ -1,4 +1,4 @@
-async function addNewPost(event) {
+async function addNewPostHandler(event) {
     event.preventDefault()
 
     const title = document.querySelector('#post-title').value.trim();
@@ -26,4 +26,4 @@ async function addNewPost(event) {
 
 };
 
-document.querySelector('.login-btn').addEventListener('click', addNewPost)
+document.querySelector('.login-btn').addEventListener('click', addNewPostHandler)

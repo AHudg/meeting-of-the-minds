@@ -14,6 +14,14 @@ router.get('/', authenticate, (req, res) => {
             {
                 model: Account,
                 attributes: ['username']
+            },
+            {
+                model: Comment,
+                attribute: ['id','content','account_id','post_id','created_at'],
+                include: {
+                    model: Account,
+                    attributes: ['username']
+                }
             }
         ]
     })
@@ -58,7 +66,6 @@ router.get('/edit/:id', authenticate, (req, res) => {
         }
 
         const post = dbPostData.get({ plain: true });
-        console.log(post)
 
         res.render('edit-post', { post, loggedIn: true});
     })

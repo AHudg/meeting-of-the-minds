@@ -1,4 +1,4 @@
-async function editNewPost(event) {
+async function editPostHandler(event) {
     event.preventDefault()
 
     const title = document.querySelector('#post-title').value.trim();
@@ -31,4 +31,4 @@ async function editNewPost(event) {
 
 };
 
-document.querySelector('.login-btn').addEventListener('click', editNewPost)
+document.querySelector('.login-btn').addEventListener('click', editPostHandler)

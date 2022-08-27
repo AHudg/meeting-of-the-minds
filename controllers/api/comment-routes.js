@@ -48,12 +48,11 @@ router.get('/:id', (req, res) => {
 });
 
 // add a comment at /api/comments
-// COME BACK HERE. YOUR POST_ID IS NOT BEING POSTED. THE DBCOMMENTDATA ONLY RETURNS ID COMMENT AND ACCOUNT ID
 router.post('/', (req, res) => {
     Comment.create({
         comment: req.body.comment,
-        account_id: req.body.account_id,
-        post_id: req.body.post_id
+        post_id: req.body.post_id,
+        account_id: req.session.account_id,
     })
     .then(dbCommentData => res.json(dbCommentData))
     .catch(err => {
