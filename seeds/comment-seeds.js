@@ -37,7 +37,7 @@ const commentArray = [
         post_id: 2
     },
     {
-        comment: 'I can never keep the it straigt in my head what commands are vanilla js v. JQuery... So I never learned JQuery. JQuery: 2 Javascript: 1',
+        comment: 'I can never keep it straight in my head what commands are vanilla js v. JQuery... So I never learned JQuery. JQuery: 2 Javascript: 1',
         account_id: 3,
         post_id: 2
     },
