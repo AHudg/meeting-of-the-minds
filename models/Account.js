@@ -1,9 +1,12 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const bcrypt = require('bcrypt');
 
 // creates the Account model
 class Account extends Model {
-    // methods go here
+    verifyPassword(passwordInput) {
+        return bcrypt.compareSync(passwordInput, this.password);
+    }
 };
 
 // create fields (columns) for the model using .init for model definition
@@ -35,6 +38,12 @@ Account.init({
     }
 },
 {
+    hooks: {
+        async beforeCreate(newAccount) {
+            newAccount.password = await bcrypt.hash(newAccount.password, 10);
+            return newAccount;
+        },
+    },
     sequelize,
     timestamps: false,
     freezeTableName: true,
