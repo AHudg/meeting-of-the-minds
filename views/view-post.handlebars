@@ -1,6 +1,8 @@
 <section class="text-center" style="background-color:rgba(5, 40, 0, 0.5);">
     <h2 class="form-header" style="margin-bottom: 0; padding-top: 15px;">-{{post.title}}-</h2>
-    <p style="padding: 15px 0; color: var(--secondary-text);">{{post.content}}</p>
+    <p style="margin-bottom: 0; padding-top: 15px; color: var(--secondary-text);">{{post.content}}</p>
+    <p class="text-right post-meta" style="padding: 20px 5px 5px 0;">Written by <span style="font-weight: bolder">{{post.account.username}}</span> on <span style="font-weight: bolder">{{fixDate post.created_at}}</span></p>
+
 </section>
 
 

@@ -31,4 +31,4 @@ async function editPostHandler(event) {
 
 };
 
-document.querySelector('.login-btn').addEventListener('click', editPostHandler)
+document.querySelector('#edit-btn').addEventListener('click', editPostHandler)

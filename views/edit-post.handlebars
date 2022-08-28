@@ -10,7 +10,10 @@
       <label class="col-sm-12 col-md-3" for="post-content">Content:</label>
       <input class="col-sm-12 col-md-8" id="post-content" name="post-content" value="{{post.content}}"/>
     </div>
-    <button class="col-8 login-btn" type="submit">Edit Post</button>
+    <div class="col-12 row justify-content-between">
+      <button id="edit-btn" class="col-5 login-btn" type="submit">Edit Post</button>
+      <button id="delete-btn" class="col-5 login-btn" type="submit">Delete Post</button>
+    </div>
   </form>
 </section>
 
@@ -29,3 +32,5 @@
 {{/if}}
 
 <script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
+
