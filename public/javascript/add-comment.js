@@ -3,13 +3,9 @@ async function commentFormHandler(event) {
 
   const comment = document.querySelector('#comment-content').value.trim();
 
-  console.log(comment);
-
   const post_id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ];
-
-  console.log(post_id)
 
   if (comment) {
       const response = await fetch('/api/comments', {
@@ -24,7 +20,7 @@ async function commentFormHandler(event) {
       });
     
       if (response.ok) {
-      //   document.location.reload();
+        document.location.reload();
       } else {
         alert(response.statusText);
       }
