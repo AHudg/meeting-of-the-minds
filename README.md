@@ -69,6 +69,6 @@ in the command line of the root directory to launch the server. Navigate to "loc
 
 ## -=Contact=-
 
-Check out the [Heroku deployed application]() and feel free to look at my other work on my [GitHub](https://github.com/AHudg).
+Check out the [Heroku deployed application](https://whispering-lowlands-00965.herokuapp.com/) and feel free to look at my other work on my [GitHub](https://github.com/AHudg).
 
 Made by Andrew Hudgins :)
