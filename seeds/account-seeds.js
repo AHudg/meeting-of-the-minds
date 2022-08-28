@@ -1,30 +1,31 @@
 const { Account } = require('../models');
+const { bulkCreate } = require('../models/Account');
 
 const accountArray = [
     {
-        username: 'andrew',
-        email: 'andrew@me.com',
-        password: 'andrew'
+        username: 'EngineeringNerd22',
+        email: 'johndoe@email.com',
+        password: 'supersecretpassword'
     },
     {
-        username: 'collin',
-        email: 'collin@me.com',
-        password: 'collin'
+        username: 'SoftwareFanatic00',
+        email: 'janedoe@email.com',
+        password: 'supersecretpassword'
     },
     {
-        username: 'emorie',
-        email: 'emorie@me.com',
-        password: 'emorie'
+        username: 'htmlHero',
+        email: 'juliandoe@email.com',
+        password: 'supersecretpassword'
     },
     {
-        username: 'taylor',
-        email: 'taylor@me.com',
-        password: 'taylor'
+        username: 'JavascriptJunkie',
+        email: 'joedoe@email.com',
+        password: 'supersecretpassword'
     },
     {
-        username: 'amando',
-        email: 'amando@me.com',
-        password: 'amando'
+        username: 'MysqlMisfit',
+        email: 'juliedoe@email.com',
+        password: 'supersecretpassword'
     }
 ];
 

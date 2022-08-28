@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Account, Post, Comment} = require('../../models');
+const authenticate = require('../../utils/authenticate');
 
 // back-end request is sent here from controllers>api>index.js
 
@@ -80,8 +81,9 @@ router.post('/login', (req, res) => {
             res.status(400).json({ message: 'Username or password are incorrect.' });
             return;
         }
-
+        console.log(dbAccountData);
         const isPassword = dbAccountData.verifyPassword(req.body.password);
+        console.log(isPassword);
 
         if (!isPassword) {
             res.status(400).json({ message: 'Username or password are incorrect.' });
@@ -110,8 +112,9 @@ router.post('/logout', (req, res) => {
 });
 
 // update an account at /api/accounts/id
-router.put('/:id', (req, res) => {
+router.put('/:id', authenticate, (req, res) => {
     Account.update(req.body, {
+        individualHooks: true,
         where: {
             id: req.params.id
         }
@@ -131,7 +134,7 @@ router.put('/:id', (req, res) => {
 });
 
 // delete an account at /api/accounts/id
-router.delete('/:id', (req, res) => {
+router.delete('/:id', authenticate, (req, res) => {
     Account.destroy({
         where: {
             id: req.params.id

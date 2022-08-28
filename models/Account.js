@@ -43,6 +43,14 @@ Account.init({
             newAccount.password = await bcrypt.hash(newAccount.password, 10);
             return newAccount;
         },
+        // async beforeBulkCreate(newAccount) {
+        //     newAccount.password = await bcrypt.hash(newAccount.password, 10);
+        //     return newAccount;
+        // },
+        async beforeUpdate(updatedAccount) {
+            updatedAccount.password = await bcrypt.hash(updatedAccount.password, 10);
+            return updatedAccount;
+        },
     },
     sequelize,
     timestamps: false,
